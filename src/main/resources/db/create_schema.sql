@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS members (
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL
+    fines DECIMAL(10,2) NOT NULL DEFAULT 0.00
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Create books_borrowed table
