@@ -43,6 +43,12 @@ public class MemberRepository {
         );
     }
 
+    // Add fine amount to a member
+    public int addFine(int memberId, double amount) {
+        String sql = "UPDATE members SET fines = fines + ? WHERE id = ?";
+        return jdbcTemplate.update(sql, amount, memberId);
+    }
+
     // Add a new member
     public int addMember(Member member) {
         String sql = "INSERT INTO members (first_name, last_name, email, fines) VALUES (?, ?, ?, ?)";
