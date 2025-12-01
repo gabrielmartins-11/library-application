@@ -30,7 +30,7 @@ INSERT INTO books (title, author, year_published, genre) VALUES
 ('A Game of Thrones', 'George R.R. Martin', 1996, 'Fantasy');
 
 -- Insert sample members
-INSERT INTO members (first_name, last_name, email) VALUES
+INSERT INTO members (first_name, last_name, email, fines) VALUES
 ('John', 'Doe', 'john.doe@gmail.com'),
 ('Jane', 'Smith', 'jane.smith@gmail.com'),
 ('Michael', 'Johnson', 'michael.johnson@gmail.com'),
@@ -72,18 +72,18 @@ INSERT INTO staff (first_name, last_name, email) VALUES
 
 -- Insert sample borrow records
 INSERT INTO books_borrowed (book_id, member_id, date_borrowed, return_date) VALUES
-(1, 1, '2025-11-01', '2025-12-01'),
+(1, 1, '2025-11-01', NULL),
 (2, 3, '2025-11-05', '2025-12-05'),
-(3, 6, '2025-11-10', '2025-12-10'),
+(3, 6, '2025-11-10', NULL),
 (4, 9, '2025-11-12', '2025-12-12'),
-(5, 10, '2025-11-15', '2025-12-15'),
+(5, 10, '2025-11-15', NULL),
 (6, 5, '2025-11-18', '2025-12-18'),
 (7, 14, '2025-11-20', '2025-12-20'),
-(8, 6, '2025-11-20', '2025-12-20'),
+(8, 6, '2025-11-20', NULL),
 (9, 13, '2025-11-21', '2025-12-21'),
 (10, 2, '2025-11-23', '2025-12-23'),
 (11, 9, '2025-11-24', '2025-12-24'),
 (12, 12, '2025-11-24', '2025-12-24'),
 (13, 4, '2025-11-24', '2025-12-24'),
-(14, 5, '2025-11-26', '2025-12-26'),
+(14, 5, '2025-11-26', NULL),
 (15, 11, '2025-11-27', '2025-12-27');
