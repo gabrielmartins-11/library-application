@@ -5,14 +5,16 @@ public class Member {
     private String firstName;
     private String lastName;
     private String email;
+    private Double fines;
 
     public Member() {}
 
-    public Member(int id, String firstName, String lastName, String email) {
+    public Member(int id, String firstName, String lastName, String email, Double fines) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.fines = fines;
     }
 
     // Getters and Setters
@@ -28,6 +30,9 @@ public class Member {
     public String getEmail() {return email;}
     public void setEmail(String email) {this.email = email;}
 
+    public Double getFines() {return fines;}
+    public void setFines(Double fines) {this.fines = fines;}
+
     @Override
     public String toString() {
         return "Member{" +
@@ -35,6 +40,7 @@ public class Member {
                 ", first name='" + firstName + '\'' +
                 ", last name='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", fines=" + fines +
                 '}';
     }
 }
