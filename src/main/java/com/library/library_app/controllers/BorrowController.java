@@ -1,6 +1,6 @@
 package com.library.library_app.controllers;
 
-import com.library.library_app.services.LibraryService;
+import com.library.library_app.Services.LibraryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
