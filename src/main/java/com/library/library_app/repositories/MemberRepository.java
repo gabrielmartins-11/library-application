@@ -58,7 +58,7 @@ public class MemberRepository {
     // Update a member
     public int updateMember(Member member) {
         String sql = "UPDATE members SET first_name = ?, last_name = ?, email = ?, fines = ? WHERE id = ?";
-        return jdbcTemplate.update(sql, member.getFirstName(), member.getLastName(), member.getEmail(), member.getId(), member.getFines());
+        return jdbcTemplate.update(sql, member.getFirstName(), member.getLastName(), member.getEmail(), member.getFines(), member.getId());
     }
 
     // Delete a member

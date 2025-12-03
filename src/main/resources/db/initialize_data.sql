@@ -31,21 +31,21 @@ INSERT INTO books (title, author, year_published, genre) VALUES
 
 -- Insert sample members
 INSERT INTO members (first_name, last_name, email, fines) VALUES
-('John', 'Doe', 'john.doe@gmail.com'),
-('Jane', 'Smith', 'jane.smith@gmail.com'),
-('Michael', 'Johnson', 'michael.johnson@gmail.com'),
-('Sarah', 'Williams', 'sarah.williams@gmail.com'),
-('Robert', 'Brown', 'robert.brown@gmail.com'),
-('Vincent', 'Nguyen', 'vincent.nguyen@gmail.com'),
-('Emily', 'Hu', 'emily.hu@gmail.com'),
-('Richard', 'Baker', 'richard.baker@gmail.com'),
-('Alan', 'Walker', 'alan.walker@gmail.com'),
-('Evan', 'Campbell', 'evan.campbell@gmail.com'),
-('Walter', 'White', 'walter.white@gmail.com'),
-('Jennifer', 'Reyes', 'jennifer.reyes@gmail.com'),
-('Elizabeth', 'White', 'elizabeth.white@gmail.com'),
-('Sarah', 'Morgan', 'sarah.morgan@gmail.com'),
-('Lisa', 'Ortiz', 'lisa.ortiz@gmail.com');
+('John', 'Doe', 'john.doe@gmail.com', 0.00),
+('Jane', 'Smith', 'jane.smith@gmail.com', 0.00),
+('Michael', 'Johnson', 'michael.johnson@gmail.com', 0.00),
+('Sarah', 'Williams', 'sarah.williams@gmail.com', 0.00),
+('Robert', 'Brown', 'robert.brown@gmail.com', 0.00),
+('Vincent', 'Nguyen', 'vincent.nguyen@gmail.com', 0.00),
+('Emily', 'Hu', 'emily.hu@gmail.com', 0.00),
+('Richard', 'Baker', 'richard.baker@gmail.com', 0.00),
+('Alan', 'Walker', 'alan.walker@gmail.com', 0.00),
+('Evan', 'Campbell', 'evan.campbell@gmail.com', 0.00),
+('Walter', 'White', 'walter.white@gmail.com', 0.00),
+('Jennifer', 'Reyes', 'jennifer.reyes@gmail.com', 0.00),
+('Elizabeth', 'White', 'elizabeth.white@gmail.com', 0.00),
+('Sarah', 'Morgan', 'sarah.morgan@gmail.com', 0.00),
+('Lisa', 'Ortiz', 'lisa.ortiz@gmail.com', 0.00);
 
 -- Insert sample staff
 INSERT INTO staff (first_name, last_name, email) VALUES
