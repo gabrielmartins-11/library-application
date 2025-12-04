@@ -2,18 +2,18 @@ package com.library.library_app.models;
 
 public class Member {
     private int id;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String email;
+    private String password;
     private Double fines;
 
     public Member() {}
 
-    public Member(int id, String firstName, String lastName, String email, Double fines) {
+    public Member(int id, String name, String email, String password, Double fines) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
         this.email = email;
+        this.password = password;
         this.fines = fines;
     }
 
@@ -21,14 +21,14 @@ public class Member {
     public int getId() {return id;}
     public void setId(int id) {this.id = id;}
 
-    public String getFirstName() {return firstName;}
-    public void setFirstName(String firstName) {this.firstName = firstName;}
-
-    public String getLastName() {return lastName;}
-    public void setLastName(String lastName) {this.lastName = lastName;}
+    public String getName() {return name;}
+    public void setName(String name) {this.name = name;}
 
     public String getEmail() {return email;}
     public void setEmail(String email) {this.email = email;}
+
+    public String getPassword() {return password;}
+    public void setPassword(String password) {this.password = password;}
 
     public Double getFines() {return fines;}
     public void setFines(Double fines) {this.fines = fines;}
@@ -37,8 +37,7 @@ public class Member {
     public String toString() {
         return "Member{" +
                 "id=" + id +
-                ", first name='" + firstName + '\'' +
-                ", last name='" + lastName + '\'' +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", fines=" + fines +
                 '}';

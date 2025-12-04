@@ -4,17 +4,21 @@ public class Book {
     private int id;
     private String title;
     private String author;
+    private String isbn;
+    private String category;
     private int yearPublished;
-    private String genre;
+    private int availableCopies;
 
     public Book() {}
 
-    public Book(int id, String title, String author, int yearPublished, String genre) {
+    public Book(int id, String title, String author, String isbn, String category, int yearPublished, int availableCopies) {
         this.id = id;
         this.title = title;
         this.author = author;
+        this.isbn = isbn;
+        this.category = category;
         this.yearPublished = yearPublished;
-        this.genre = genre;
+        this.availableCopies = availableCopies;
     }
 
     // Getters and Setters
@@ -27,11 +31,17 @@ public class Book {
     public String getAuthor() {return author;}
     public void setAuthor(String author) {this.author = author;}
 
+    public String getIsbn() {return isbn;}
+    public void setIsbn(String isbn) {this.isbn = isbn;}
+
+    public String getCategory() {return category;}
+    public void setCategory(String category) {this.category = category;}
+
     public int getYearPublished() {return yearPublished;}
     public void setYearPublished(int yearPublished) {this.yearPublished = yearPublished;}
 
-    public String getGenre() {return genre;}
-    public void setGenre(String genre) {this.genre = genre;}
+    public int getAvailableCopies() {return availableCopies;}
+    public void setAvailableCopies(int availableCopies) {this.availableCopies = availableCopies;}
 
     @Override
     public String toString() {
@@ -39,8 +49,10 @@ public class Book {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
-                ", year published='" + yearPublished + '\'' +
-                ", genre='" + genre + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", category='" + category + '\'' +
+                ", yearPublished=" + yearPublished +
+                ", availableCopies=" + availableCopies +
                 '}';
     }
 }

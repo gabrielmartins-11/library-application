@@ -34,10 +34,10 @@ public class LibraryService {
         BooksBorrowed record = booksBorrowedRepository.getBorrowedById(borrowedId);
 
         LocalDate today = LocalDate.now();
-        LocalDate borrowDate = record.getDateBorrowed();
+        LocalDate borrowDate = record.getBorrowDate();
 
-        //Compute due date: borrowDate + LOAN_DAYS
-        LocalDate dueDate = borrowDate.plusDays(LOAN_DAYS);
+        //Compute due date: borrowDate + LOAN_DAYS (fallback to stored dueDate if present)
+        LocalDate dueDate = record.getDueDate() != null ? record.getDueDate() : borrowDate.plusDays(LOAN_DAYS);
 
         //Mark book as returned in DB (sets return_date = today)
         booksBorrowedRepository.returnBook(borrowedId);

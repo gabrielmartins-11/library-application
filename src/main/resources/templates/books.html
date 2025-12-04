@@ -7,7 +7,7 @@
     <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div th:replace="fragments/navbar :: navbar"></div>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
     <div class="container mt-4">
         <h1>Books</h1>
         <table class="table table-striped">
@@ -17,7 +17,7 @@
                     <th>Title</th>
                     <th>Author</th>
                     <th>Year</th>
-                    <th>Genre</th>
+                    <th>Category</th>
                     <th>Details</th>
                 </tr>
             </thead>
@@ -27,7 +27,7 @@
                     <td th:text="${book.title}"></td>
                     <td th:text="${book.author}"></td>
                     <td th:text="${book.yearPublished}"></td>
-                    <td th:text="${book.genre}"></td>
+                    <td th:text="${book.category}"></td>
                     <td><a th:href="@{'/books/' + ${book.id}}" class="btn btn-sm btn-info">View</a></td>
                 </tr>
             </tbody>

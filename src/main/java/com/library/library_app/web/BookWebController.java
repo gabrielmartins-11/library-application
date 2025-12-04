@@ -25,7 +25,6 @@ public class BookWebController {
     public String bookDetail(@PathVariable("id") int id, Model model) {
         Book book = bookRepo.getBookById(id);
         model.addAttribute("book", book);
-        // TODO: Add borrowing history if needed
         return "book_detail";
     }
 }

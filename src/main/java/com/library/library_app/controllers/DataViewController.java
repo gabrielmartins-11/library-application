@@ -54,7 +54,7 @@ public class DataViewController {
         return borrowedRepo.getAllBorrowedBooks();
     }
 
-    // --- Add endpoints to create resources ---
+    // Add endpoints to create resources 
 
     @PostMapping("/api/members")
     public ResponseEntity<String> addMember(@RequestBody Member member) {
@@ -83,7 +83,7 @@ public class DataViewController {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add staff");
     }
 
-    // --- Add endpoints to delete resources ---
+    // Add endpoints to delete resources 
 
     @DeleteMapping("/api/members/{id}")
     public ResponseEntity<String> deleteMember(@PathVariable("id") int id) {
