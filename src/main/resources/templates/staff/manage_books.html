@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Books</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<div class="container mt-4">
+    <h1>Manage Books</h1>
+    <form method="get" action="/staff/books" class="row g-3 mb-3">
+        <div class="col-auto">
+            <input type="text" class="form-control" name="q" th:value="${query}" placeholder="Search...">
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-outline-primary" type="submit">Filter</button>
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Year</th>
+                <th>Copies</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="b : ${books}">
+                <td th:text="${b.id}"></td>
+                <td>
+                    <form method="post" th:action="@{'/staff/books/' + ${b.id} + '/edit'}" class="row g-2">
+                        <div class="col"><input class="form-control" name="title" th:value="${b.title}"></div>
+                        <div class="col"><input class="form-control" name="author" th:value="${b.author}"></div>
+                        <div class="col"><input class="form-control" name="category" th:value="${b.category}"></div>
+                        <div class="col"><input type="number" class="form-control" name="year" th:value="${b.yearPublished}"></div>
+                        <div class="col"><input type="number" class="form-control" name="copies" th:value="${b.availableCopies}"></div>
+                        <div class="col-auto">
+                            <button class="btn btn-sm btn-primary" type="submit">Edit</button>
+                        </div>
+                    </form>
+                </td>
+                <td colspan="5"></td>
+                <td>
+                    <form method="post" th:action="@{'/staff/books/' + ${b.id} + '/delete'}">
+                        <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

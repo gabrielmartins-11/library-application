@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+    <div class="container mt-4">
+        <h1>Member Details</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${member.firstName} + ' ' + ${member.lastName}"></h5>
+                <p class="card-text"><strong>Email:</strong> <span th:text="${member.email}"></span></p>
+                <p class="card-text"><strong>Fines:</strong> $<span th:text="${member.fines}"></span></p>
+            </div>
+        </div>
+        <!-- TODO: Borrowed books table for this member -->
+        <a href="/members" class="btn btn-secondary mt-3">Back to Members</a>
+    </div>
+</body>
+</html>

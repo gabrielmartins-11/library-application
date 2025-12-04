@@ -16,45 +16,65 @@ public class StaffRepository {
 
     // Get all staff
     public List<Staff> getAllStaff() {
-        String sql = "SELECT id, first_name, last_name, email FROM staff";
+        String sql = "SELECT id, name, email, password, role FROM staff";
         return jdbcTemplate.query(sql, (rs, rowNum) ->
                 new Staff(
                         rs.getInt("id"),
-                        rs.getString("first_name"),
-                        rs.getString("last_name"),
-                        rs.getString("email")
+                        rs.getString("name"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getString("role")
                 )
         );
     }
 
     // Get staff by id
     public Staff getStaffById(int id) {
-        String sql = "SELECT id, first_name, last_name, email FROM staff WHERE id = ?";
+        String sql = "SELECT id, name, email, password, role FROM staff WHERE id = ?";
         return jdbcTemplate.queryForObject(sql, new Object[]{id}, (rs, rowNum) ->
                 new Staff(
                         rs.getInt("id"),
-                        rs.getString("first_name"),
-                        rs.getString("last_name"),
-                        rs.getString("email")
+                        rs.getString("name"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getString("role")
                 )
         );
     }
 
     // Add a new staff
     public int addStaff(Staff staff) {
-        String sql = "INSERT INTO staff (first_name, last_name, email) VALUES (?, ?, ?)";
-        return jdbcTemplate.update(sql, staff.getFirstName(), staff.getLastName(), staff.getEmail());
+        String sql = "INSERT INTO staff (name, email, password, role) VALUES (?, ?, ?, ?)";
+        return jdbcTemplate.update(sql, staff.getName(), staff.getEmail(), staff.getPassword(), staff.getRole());
     }
 
     // Update a staff
     public int updateStaff(Staff staff) {
-        String sql = "UPDATE staff SET first_name = ?, last_name = ?, email = ? WHERE id = ?";
-        return jdbcTemplate.update(sql, staff.getFirstName(), staff.getLastName(), staff.getEmail(), staff.getId());
+        String sql = "UPDATE staff SET name = ?, email = ?, password = ?, role = ? WHERE id = ?";
+        return jdbcTemplate.update(sql, staff.getName(), staff.getEmail(), staff.getPassword(), staff.getRole(), staff.getId());
     }
 
     // Delete a staff
     public int deleteStaff(int id) {
         String sql = "DELETE FROM staff WHERE id = ?";
         return jdbcTemplate.update(sql, id);
+    }
+
+    // Find staff by email and password (simple authentication)
+    public Staff findByEmailAndPassword(String email, String password) {
+        String sql = "SELECT id, name, email, password, role FROM staff WHERE email = ? AND password = ?";
+        List<Staff> list = jdbcTemplate.query(sql, ps -> {
+                    ps.setString(1, email);
+                    ps.setString(2, password);
+                },
+                (rs, rowNum) -> new Staff(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getString("role")
+                )
+        );
+        return list.isEmpty() ? null : list.get(0);
     }
 }
