@@ -12,6 +12,8 @@ import com.library.library_app.repositories.StaffRepository;
 import com.library.library_app.models.Member;
 import com.library.library_app.models.Staff;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class HomeController {
 
@@ -55,5 +57,23 @@ public class HomeController {
             redirectAttributes.addFlashAttribute("memberId", member.getId());
             return "redirect:/members";
         }
+    }
+
+    @GetMapping("/books_borrowed")
+    public String booksBorrowedRedirect(HttpSession session, RedirectAttributes ra) {
+        Object role = session.getAttribute("role");
+        if ("MEMBER".equals(role)) {
+            Object memberId = session.getAttribute("memberId");
+            if (memberId == null) {
+                ra.addFlashAttribute("message", "Missing member session.");
+                return "redirect:/";
+            }
+            return "redirect:/members/borrowed?memberId=" + memberId;
+        }
+        if ("STAFF".equals(role)) {
+            return "redirect:/staff/borrowed";
+        }
+        ra.addFlashAttribute("message", "Please log in.");
+        return "redirect:/";
     }
 }
