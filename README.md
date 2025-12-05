@@ -54,13 +54,25 @@ or
     mvn spring-boot:run
 
   
-  
 
 ## 5) Go to browser
 
 http://localhost:8080
 
   
+
+### Sample Logins
+
+Sample log in as a member:
+
+    Email: john.doe@gmail.com
+    Password: john123
+
+Sample log in as staff:
+
+    Email: alice.j@library.com
+    password: alicepw
+
 **URLs to check database:**
 
 http://localhost:8080/db/tables
