@@ -73,6 +73,8 @@ Sample log in as staff:
     Email: alice.j@library.com
     password: alicepw
 
+To test different operations visit each funtionality through the member or staff dashboard.
+
 **URLs to check database:**
 
 http://localhost:8080/db/tables
