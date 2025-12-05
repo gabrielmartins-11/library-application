@@ -73,7 +73,30 @@ Sample log in as staff:
     Email: alice.j@library.com
     password: alicepw
 
-To test different operations visit each funtionality through the member or staff dashboard.
+To test different operations, visit each functionality through the member or staff dashboard.
+
+## Member Functionalities
+
+- Search books
+- Borrow books
+- Return Books
+- View borrowed books
+- View fines
+- Pay fines
+- View profile info
+
+## Staff Functionalities
+
+- Add new books
+- Update book details
+- Delete books
+- Create members 
+- Update member details
+- Delete member accounts
+- Add fines
+- View borrow history of members
+- View currently loaned out books
+- Review overdue records and fines.
 
 **URLs to check database:**
 
